@@ -743,69 +743,137 @@ img {
 }
 
 .clients-section {
-  padding-top: 36px;
+  --section-bg: #10293b;
+  --section-bg-dark: #0b1d2a;
+  --text-main: #ffffff;
+  --text-muted: #b8c7d3;
+  --accent-green: #5be36a;
+  --accent-cyan: #38d6c8;
+  overflow: hidden;
+  margin-top: 36px;
+  padding: 92px 0;
+  background:
+    radial-gradient(circle at 14% 16%, rgba(56, 214, 200, 0.12), transparent 30%),
+    linear-gradient(135deg, var(--section-bg), var(--section-bg-dark));
+  color: var(--text-main);
+  isolation: isolate;
 }
 
-.clients-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 14px;
+.clients-heading {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto 54px;
+  text-align: start;
+}
+
+.clients-kicker {
+  margin: 0 0 14px;
+  color: var(--accent-green);
+  font-family: var(--font-heading);
+  font-weight: 900;
+}
+
+.clients-heading h2 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-size: 50px;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.clients-heading p:last-child {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+.clients-marquee {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  direction: ltr;
+}
+
+.clients-marquee::before,
+.clients-marquee::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: min(12vw, 150px);
+  content: "";
+  pointer-events: none;
+}
+
+.clients-marquee::before {
+  inset-inline-start: 0;
+  background: linear-gradient(to right, var(--section-bg), rgba(16, 41, 59, 0));
+}
+
+.clients-marquee::after {
+  inset-inline-end: 0;
+  background: linear-gradient(to left, var(--section-bg-dark), rgba(11, 29, 42, 0));
+}
+
+.clients-track {
+  display: flex;
+  width: max-content;
+  gap: 7rem;
+  padding-inline: 3.5rem;
+  animation: clientsMarquee 35s linear infinite;
+  will-change: transform;
+  direction: ltr;
+}
+
+.clients-marquee:hover .clients-track {
+  animation-play-state: paused;
 }
 
 .client-logo-card {
   display: grid;
-  min-height: 142px;
+  width: 180px;
+  height: 108px;
+  flex: 0 0 auto;
   place-items: center;
-  padding: 18px;
-  border: 1px solid var(--line);
+  padding: 10px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.client-logo-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(9, 107, 255, 0.34);
-  box-shadow: var(--shadow);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .client-logo-card img {
   width: 100%;
-  max-width: 150px;
-  max-height: 76px;
+  max-width: 170px;
+  max-height: 82px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.72;
+  filter: grayscale(1) saturate(0.2) brightness(1.08);
+  opacity: 0.78;
   transition:
-    filter 0.2s ease,
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    filter 0.22s ease,
+    opacity 0.22s ease,
+    transform 0.22s ease;
 }
 
 .client-logo-card:hover img {
-  filter: grayscale(0);
+  filter: grayscale(0) saturate(1) brightness(1.04) drop-shadow(0 0 16px rgba(56, 214, 200, 0.22));
   opacity: 1;
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.clients-note {
-  margin-top: 16px;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(0, 205, 235, 0.08), rgba(117, 217, 40, 0.08)),
-    #fff;
-  text-align: center;
+@keyframes clientsMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-.clients-note p {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 700;
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation: none;
+  }
 }
 
 .testimonials-section {
@@ -1171,10 +1239,6 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .clients-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
@@ -1265,13 +1329,41 @@ img {
 
   .hero-panel,
   .program-grid,
-  .clients-grid,
   .contact-form {
     grid-template-columns: 1fr;
   }
 
   .client-logo-card {
-    min-height: 118px;
+    width: 140px;
+    height: 86px;
+  }
+
+  .clients-section {
+    padding: 64px 0;
+  }
+
+  .clients-heading {
+    width: min(100% - 28px, 1180px);
+    margin-bottom: 34px;
+  }
+
+  .clients-heading h2 {
+    font-size: 34px;
+  }
+
+  .clients-heading p:last-child {
+    font-size: 16px;
+  }
+
+  .clients-track {
+    gap: 3rem;
+    padding-inline: 1.5rem;
+    animation-duration: 30s;
+  }
+
+  .client-logo-card img {
+    max-width: 132px;
+    max-height: 64px;
   }
 
   .hero-panel {
