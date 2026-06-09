@@ -2,15 +2,15 @@
   color-scheme: light;
   --ink: #101820;
   --muted: #5d6b78;
-  --paper: #f3f8fb;
+  --paper: #f4f8fa;
   --panel: #ffffff;
-  --line: #d8e7ef;
-  --brand-blue: #096bff;
-  --brand-cyan: #00cdeb;
-  --brand-lime: #75d928;
-  --brand-navy: #0b2740;
-  --brand-slate: #26333a;
-  --accent: #75d928;
+  --line: #d8e5ec;
+  --brand-blue: #2878e3;
+  --brand-cyan: #38d6c8;
+  --brand-lime: #5be36a;
+  --brand-navy: #0f2535;
+  --brand-slate: #203743;
+  --accent: #5be36a;
   --font-body: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
   --font-heading: "Cairo", "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
   --shadow: 0 18px 50px rgba(11, 39, 64, 0.16);
@@ -249,12 +249,12 @@ img {
   padding: 0 24px;
   background: linear-gradient(135deg, var(--brand-cyan), var(--brand-blue));
   color: #fff;
-  box-shadow: 0 14px 28px rgba(9, 107, 255, 0.28);
+  box-shadow: 0 14px 28px rgba(40, 120, 227, 0.24);
 }
 
 .secondary-button {
   padding: 0 22px;
-  border: 1px solid rgba(255, 255, 255, 0.46);
+  border: 1px solid rgba(216, 231, 239, 0.52);
   color: #fff;
 }
 
@@ -575,8 +575,8 @@ img {
 }
 
 .program-tabs button.active {
-  border-color: var(--brand-blue);
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-cyan));
+  border-color: rgba(56, 214, 200, 0.72);
+  background: linear-gradient(135deg, var(--brand-navy), var(--brand-cyan));
   color: #fff;
 }
 
@@ -588,9 +588,11 @@ img {
 
 .program-card {
   overflow: hidden;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(40, 120, 227, 0.14);
   border-radius: 8px;
-  background: #fff;
+  background:
+    linear-gradient(180deg, rgba(56, 214, 200, 0.045), rgba(255, 255, 255, 0) 42%),
+    #fff;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -602,7 +604,7 @@ img {
 
 .program-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow);
+  box-shadow: 0 18px 42px rgba(15, 37, 53, 0.13);
 }
 
 .program-card img {
@@ -617,7 +619,7 @@ img {
 
 .program-card p {
   margin: 0;
-  color: var(--brand-blue);
+  color: #1f9da2;
   font-weight: 900;
 }
 
@@ -706,12 +708,36 @@ img {
   grid-template-columns: repeat(3, 1fr);
   overflow: hidden;
   border-radius: 8px;
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-navy));
+  background:
+    linear-gradient(135deg, rgba(56, 214, 200, 0.2), rgba(91, 227, 106, 0.08) 42%, rgba(15, 37, 53, 0) 72%),
+    linear-gradient(135deg, #163f5a, var(--brand-navy));
   color: #fff;
 }
 
 .metric-strip div {
+  display: grid;
+  gap: 10px;
+  align-content: center;
+  min-width: 0;
   padding: 28px;
+}
+
+.metric-strip strong,
+.metric-strip span {
+  display: block;
+}
+
+.metric-strip strong {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.1vw, 42px);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.metric-strip span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 .metric-strip div + div {
@@ -923,7 +949,7 @@ img {
 }
 
 .review-card span {
-  color: var(--brand-blue);
+  color: #1f9da2;
   font-weight: 700;
 }
 
@@ -1014,6 +1040,7 @@ img {
   background: linear-gradient(135deg, var(--brand-lime), var(--brand-cyan));
   color: var(--brand-navy);
   font-size: 16px;
+  box-shadow: 0 14px 30px rgba(56, 214, 200, 0.2);
 }
 
 .contact-form button:disabled {
