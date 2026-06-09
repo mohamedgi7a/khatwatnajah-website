@@ -1,11 +1,10 @@
 {
-  "outputDirectory": "dist",
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/((?!assets/|google5046a073c2562fb2.html|_redirects).*)",
-      "destination": "/index.html"
-    }
-  ]
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+          {
+                  "source": "/((?!assets/|sitemap.xml|robots.txt|google5046a073c2562fb2.html|_redirects).*)",
+                  "destination": "/index.html"
+          }
+    ]
 }
