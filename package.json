@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "echo \"Static website - no build step required\""
+    "build": "mkdir -p dist && cp -r index.html styles.css script.js assets google5046a073c2562fb2.html _redirects dist/"
   }
 }
