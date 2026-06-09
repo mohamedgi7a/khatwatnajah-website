@@ -144,16 +144,18 @@
       </section>
 
       <section class="section programs-section" id="services">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="services.eyebrow">خدماتنا</p>
-          <h2 data-i18n="services.title">كل ما تحتاجه المنشأة للتشغيل اليومي.</h2>
-        </div>
+        <div class="programs-header">
+          <div class="section-heading programs-heading">
+            <p class="eyebrow" data-i18n="services.eyebrow">خدماتنا</p>
+            <h2 data-i18n="services.title">كل ما تحتاجه المنشأة للتشغيل اليومي.</h2>
+          </div>
 
-        <div class="program-tabs" role="tablist" aria-label="فلترة الخدمات" data-i18n-aria-label="services.filterLabel">
-          <button class="active" type="button" data-filter="all" data-i18n="filters.all">الكل</button>
-          <button type="button" data-filter="soft" data-i18n="filters.soft">خدمات ناعمة</button>
-          <button type="button" data-filter="hard" data-i18n="filters.hard">خدمات صلبة</button>
-          <button type="button" data-filter="support" data-i18n="filters.support">دعم وتشغيل</button>
+          <div class="program-tabs" role="tablist" aria-label="فلترة الخدمات" data-i18n-aria-label="services.filterLabel">
+            <button class="active" type="button" data-filter="all" data-i18n="filters.all">الكل</button>
+            <button type="button" data-filter="soft" data-i18n="filters.soft">خدمات ناعمة</button>
+            <button type="button" data-filter="hard" data-i18n="filters.hard">خدمات صلبة</button>
+            <button type="button" data-filter="support" data-i18n="filters.support">دعم وتشغيل</button>
+          </div>
         </div>
 
         <div class="program-grid">
@@ -190,6 +192,15 @@
               <p>Maintenance</p>
               <h3 data-i18n="services.maintenanceTitle">الصيانة والتشغيل</h3>
               <span data-i18n="services.maintenanceCopy">صيانة دورية وطارئة تشمل الكهرباء، السباكة، والتكييف.</span>
+            </div>
+          </article>
+
+          <article class="program-card" data-category="hard">
+            <img src="./assets/service-painting-restoration.png" alt="خدمات الدهانات والترميم من خطوة نجاح" data-i18n-alt="services.paintingAlt" />
+            <div>
+              <p>Painting</p>
+              <h3 data-i18n="services.paintingTitle">الدهانات والترميم</h3>
+              <span data-i18n="services.paintingCopy">أعمال دهان وترميم داخلية وخارجية لمعالجة التشققات وتحسين جاهزية المنشأة.</span>
             </div>
           </article>
 
@@ -263,14 +274,14 @@
         </div>
 
         <div class="testimonial-card">
-          <p data-i18n="sectors.quote">"نبحث عن شريك لا يقدم عمالة فقط، بل يشرف ويتابع ويجعل التشغيل اليومي أسهل."</p>
+          <p data-i18n="sectors.quote">في خطوة نجاح، لا نوفر العمالة فقط؛ بل نقدم إشرافاً ومتابعة وتشغيلاً منظماً يجعل إدارة المنشأة أسهل وأكثر استقراراً.</p>
           <span data-i18n="sectors.quoteBy">قيمة نؤمن بها في كل موقع نخدمه</span>
         </div>
       </section>
 
       <section class="clients-section" id="clients">
         <div class="clients-heading">
-          <p class="clients-kicker" data-i18n="clients.eyebrow">{ عملاؤنا }</p>
+          <p class="clients-kicker" data-i18n="clients.eyebrow">عملاؤنا</p>
           <h2 data-i18n="clients.title">شركاء وثقوا في خطوة نجاح</h2>
           <p data-i18n="clients.note">وشركات وعملاء آخرون من مختلف القطاعات.</p>
         </div>
@@ -303,7 +314,7 @@
       </section>
 
       <section class="section testimonials-section" id="testimonials">
-        <div class="section-heading">
+        <div class="section-heading testimonials-heading">
           <p class="eyebrow" data-i18n="testimonials.eyebrow">آراء العملاء</p>
           <h2 data-i18n="testimonials.title">ما يقوله شركاؤنا عن تجربة العمل معنا.</h2>
         </div>
@@ -386,6 +397,7 @@
               <option data-i18n="form.serviceManpower">توفير الموارد البشرية</option>
               <option data-i18n="form.serviceCleaning">خدمات النظافة</option>
               <option data-i18n="form.serviceMaintenance">خدمات الصيانة</option>
+              <option data-i18n="form.servicePainting">الدهانات والترميم</option>
               <option data-i18n="form.serviceHospitality">خدمات الضيافة</option>
               <option data-i18n="form.servicePest">مكافحة الحشرات</option>
               <option data-i18n="form.serviceLandscaping">الزراعة والتشجير</option>
