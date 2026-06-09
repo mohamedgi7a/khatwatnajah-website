@@ -1,10 +1,12 @@
 {
-    "cleanUrls": true,
-    "trailingSlash": false,
-    "rewrites": [
-          {
-                  "source": "/((?!assets/|sitemap.xml|robots.txt|google5046a073c2562fb2.html|_redirects).*)",
-                  "destination": "/index.html"
-          }
-    ]
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "routes": [
+              { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
+              { "src": "/robots.txt", "dest": "/robots.txt" },
+              { "src": "/assets/(.*)", "dest": "/assets/$1" },
+              { "src": "/google5046a073c2562fb2.html", "dest": "/google5046a073c2562fb2.html" },
+              { "src": "/_redirects", "dest": "/_redirects" },
+              { "src": "/(.*)", "dest": "/index.html" }
+      ]
 }
