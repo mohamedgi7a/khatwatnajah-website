@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/((?!assets/|google5046a073c2562fb2.html|_redirects).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
