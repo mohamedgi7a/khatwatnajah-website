@@ -1,8 +1,8 @@
 {
-  "name": "khatwat-najah-website",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "build": "mkdir -p dist && cp -r index.html styles.css script.js assets google5046a073c2562fb2.html _redirects dist/"
-  }
+    "name": "khatwat-najah-website",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+          "build": "mkdir -p dist && cp -r index.html styles.css script.js assets sitemap.xml robots.txt google5046a073c2562fb2.html _redirects dist/"
+    }
 }
