@@ -10,6 +10,7 @@ import ContactForm from '@/components/ContactForm'
 import { LanguageProvider, useLanguage } from '@/components/LanguageContext'
 
 const AnimatedSections = dynamic(() => import('@/components/AnimatedSections'), { ssr: false })
+const whatsappUrl = `https://wa.me/966550524765?text=${encodeURIComponent('مرحبًا، زرت موقعكم الإلكتروني وأرغب في معرفة المزيد عن خدماتكم.')}`
 
 const content = {
   ar: {
@@ -62,7 +63,7 @@ function HomeContent() {
           <p className="mt-8 max-w-2xl text-xl leading-9 text-white/68 md:text-2xl">{copy.heroCopy}</p>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href="#contact" className="group inline-flex items-center gap-3 rounded-full bg-white px-7 py-4 font-semibold text-navy shadow-glow transition hover:-translate-y-1">{copy.quote} <ArrowDownLeft size={18} /></a>
-            <a href="https://wa.me/966534012126" target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-3 rounded-full px-7 py-4 font-semibold transition hover:-translate-y-1">{copy.whatsapp} <MessageCircle size={18} /></a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="glass inline-flex items-center gap-3 rounded-full px-7 py-4 font-semibold transition hover:-translate-y-1">{copy.whatsapp} <MessageCircle size={18} /></a>
           </div>
           <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-sm text-white/50"><span className="inline-flex items-center gap-2"><Clock3 size={16} className="text-cyanGlow" /> {copy.support}</span><span className="inline-flex items-center gap-2"><MapPin size={16} className="text-cyanGlow" /> {copy.city}</span></div>
         </div>

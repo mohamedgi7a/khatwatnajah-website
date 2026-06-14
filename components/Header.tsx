@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { Languages, Menu, MessageCircle, X } from 'lucide-react'
 import { useLanguage } from './LanguageContext'
 
+const whatsappUrl = `https://wa.me/966550524765?text=${encodeURIComponent('مرحبًا، زرت موقعكم الإلكتروني وأرغب في معرفة المزيد عن خدماتكم.')}`
+
 const labels = {
   ar: { nav: [['الرئيسية', 'home'], ['من نحن', 'about'], ['الخدمات', 'services'], ['آلية العمل', 'process'], ['عملاؤنا', 'clients'], ['التواصل', 'contact']], whatsapp: 'تواصل واتساب', open: 'فتح القائمة', close: 'إغلاق القائمة', aria: 'التنقل الرئيسي' },
   en: { nav: [['Home', 'home'], ['About', 'about'], ['Services', 'services'], ['Process', 'process'], ['Clients', 'clients'], ['Contact', 'contact']], whatsapp: 'WhatsApp', open: 'Open menu', close: 'Close menu', aria: 'Main navigation' }
@@ -61,7 +63,7 @@ export default function Header() {
           <button type="button" onClick={() => setLanguage(language === 'ar' ? 'en' : 'ar')} className="glass inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold" aria-label={language === 'ar' ? 'Switch to English' : 'التبديل إلى العربية'}>
             <Languages size={17} /> {language === 'ar' ? 'EN' : 'عربي'}
           </button>
-          <a href="https://wa.me/966534012126" target="_blank" rel="noreferrer" className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy shadow-glow transition hover:scale-[1.03] lg:inline-flex">
+          <a href={whatsappUrl} target="_blank" rel="noreferrer" className="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-navy shadow-glow transition hover:scale-[1.03] lg:inline-flex">
             <MessageCircle size={17} /> {copy.whatsapp}
           </a>
         </div>
@@ -75,7 +77,7 @@ export default function Header() {
             <button type="button" onClick={() => { setLanguage(language === 'ar' ? 'en' : 'ar'); setOpen(false) }} className="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl border border-white/15 px-5 py-3 font-bold">
               <Languages size={18} /> {language === 'ar' ? 'English' : 'العربية'}
             </button>
-            <a href="https://wa.me/966534012126" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-cyanGlow px-5 py-3 font-bold text-navy"><MessageCircle size={18} /> {copy.whatsapp}</a>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-cyanGlow px-5 py-3 font-bold text-navy"><MessageCircle size={18} /> {copy.whatsapp}</a>
           </div>
         )}
         </div>
