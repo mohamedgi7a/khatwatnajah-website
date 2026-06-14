@@ -115,7 +115,9 @@ export default function AnimatedSections() {
   const sectorsRef = useRef<HTMLDivElement>(null)
   const seasonalRef = useRef<HTMLDivElement>(null)
   const processRef = useRef<HTMLElement>(null)
-  const sectorsInView = useInView(sectorsRef, { once: true, amount: .48, margin: '0px 0px -10% 0px' })
+  // On mobile the sector grid is taller than the viewport, so a high visible
+  // ratio can never be reached and the cards remain in their hidden state.
+  const sectorsInView = useInView(sectorsRef, { once: true, amount: .12, margin: '0px 0px -8% 0px' })
   const seasonalInView = useInView(seasonalRef, { once: true, amount: .34, margin: '0px 0px -10% 0px' })
   const processInView = useInView(processRef, { once: true, margin: '-15% 0px -15% 0px' })
   const reduceMotion = useReducedMotion()
@@ -208,14 +210,14 @@ export default function AnimatedSections() {
         </div>
       </section>
 
-      <section id="sectors" className="section-glow-cyan relative z-10 mx-auto max-w-7xl scroll-mt-28 overflow-hidden px-5 py-28">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
+      <section id="sectors" className="section-glow-cyan relative z-10 mx-auto max-w-7xl scroll-mt-28 overflow-hidden px-5 py-20 md:py-28">
+        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-14">
           <p className="mb-4 text-sm font-semibold text-cyanGlow">{extra.sectors}</p>
-          <h2 className="text-4xl font-bold leading-tight md:text-6xl">{extra.sectorsTitle}</h2>
-          <p className="mx-auto mt-6 max-w-2xl leading-8 text-white/62">{extra.sectorsText}</p>
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">{extra.sectorsTitle}</h2>
+          <p className="mx-auto mt-5 max-w-2xl leading-7 text-white/62 md:mt-6 md:leading-8">{extra.sectorsText}</p>
         </div>
 
-        <div ref={sectorsRef} className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={sectorsRef} className="relative grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           <motion.div
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-1/2 hidden size-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyanGlow/15 blur-[70px] lg:block"
@@ -230,14 +232,14 @@ export default function AnimatedSections() {
               animate={sectorsInView || reduceMotion ? { opacity: 1, scale: 1, x: 0, y: 0 } : undefined}
               transition={{ delay: index * .09, duration: .65, type: 'spring', stiffness: 100, damping: 14 }}
               whileHover={reduceMotion ? undefined : { y: -7, scale: 1.02 }}
-              className="sector-card glass relative min-h-48 overflow-hidden rounded-[2rem] p-6"
+              className="sector-card glass relative min-h-40 overflow-hidden rounded-[1.6rem] p-5 sm:min-h-48 sm:rounded-[2rem] sm:p-6"
             >
               <div className="absolute -left-8 -top-8 size-28 rounded-full bg-cyanGlow/10 blur-2xl" />
-              <div className="relative grid size-14 place-items-center rounded-2xl border border-white/15 bg-white/10 text-cyanGlow shadow-glow">
-                <Icon size={28} />
+              <div className="relative grid size-12 place-items-center rounded-xl border border-white/15 bg-white/10 text-cyanGlow shadow-glow sm:size-14 sm:rounded-2xl">
+                <Icon size={26} />
               </div>
-              <div className="relative mt-10 flex items-end justify-between gap-4">
-                <h3 className="text-xl font-bold leading-8">{language === 'ar' ? ar : en}</h3>
+              <div className="relative mt-6 flex items-end justify-between gap-4 sm:mt-10">
+                <h3 className="text-lg font-bold leading-7 sm:text-xl sm:leading-8">{language === 'ar' ? ar : en}</h3>
                 <span className="text-sm font-bold text-white/25">{String(index + 1).padStart(2, '0')}</span>
               </div>
             </motion.article>
