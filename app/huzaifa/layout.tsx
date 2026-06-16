@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'حذيفة محمد | مدير مرافق ومهندس معماري أول',
   description: 'الملف المهني لحذيفة محمد في إدارة المرافق والهندسة المعمارية وإدارة المشاريع.',
-  robots: { index: false, follow: false, nocache: true },
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'حذيفة محمد | Huzaifa Mohamed',
     description: 'Facilities Management, Architecture & Project Management',

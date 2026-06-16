@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /huzaifa
 
 Sitemap: https://www.success-step.com/sitemap.xml
